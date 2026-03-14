@@ -49,9 +49,51 @@
   --sh-lg: 0 8px 32px rgba(100,70,40,.12);
 }
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+/* ═══════════════════════════════════════════
+   DARK MODE THEME
+═══════════════════════════════════════════ */
+[data-theme="dark"] {
+  --bg:   #0e0c0a;
+  --s1:   #161310;
+  --s2:   #1e1a16;
+  --s3:   #26211b;
+  --s4:   #302a22;
+  --border:  rgba(255,200,80,.10);
+  --border2: rgba(255,200,80,.22);
+
+  --amber:    #f5a623;
+  --amber-d:  #c07a0a;
+  --amber-bg: rgba(245,166,35,.18);
+  --amber-gl: #ffd166;
+
+  --open-main: #f5a050;
+  --open-bg:   rgba(245,160,80,.12);
+  --open-light:rgba(245,160,80,.08);
+  --open-glow: rgba(245,160,80,.30);
+
+  --close-main:#7aaad8;
+  --close-bg:  rgba(122,170,216,.12);
+  --close-light:rgba(122,170,216,.08);
+  --close-glow: rgba(122,170,216,.30);
+
+  --green:    #2dce7e;  --green-bg: rgba(45,206,126,.10);  --green-light:rgba(45,206,126,.08);
+  --red:      #f25f5c;  --red-bg:   rgba(242,95,92,.10);   --red-light:  rgba(242,95,92,.08);
+  --teal:     #20d9aa;  --teal-bg:  rgba(32,217,170,.10);  --teal-light: rgba(32,217,170,.08);
+  --blue:     #7aaad8;  --blue-bg:  rgba(122,170,216,.10);
+  --purple:   #c084fc;  --purple-bg:rgba(192,132,252,.10);
+
+  --t1: #f5ede0;
+  --t2: #a89070;
+  --t3: #6a5540;
+
+  --sh-sm: 0 2px 8px rgba(0,0,0,.25);
+  --sh:    0 4px 20px rgba(0,0,0,.35);
+  --sh-lg: 0 8px 32px rgba(0,0,0,.50);
+}
+
+
 html{height:100%;}
-body{font-family:'Noto Sans Thai',sans-serif;background:var(--bg);color:var(--t1);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100dvh;}
+body{font-family:'Noto Sans Thai',sans-serif;background:var(--bg);color:var(--t1);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100dvh;transition:background .25s,color .25s;}
 input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;}
 input[type=number]{-moz-appearance:textfield;}
 button{font-family:'Noto Sans Thai',sans-serif;}
@@ -60,10 +102,7 @@ button{font-family:'Noto Sans Thai',sans-serif;}
 ::-webkit-scrollbar-thumb{background:var(--s4);border-radius:10px;}
 
 /* ═══ APP SHELL ═══ */
-.app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;
-  background: linear-gradient(160deg,#fdf8f2 0%,#f5efe6 100%);
-}
-
+.app{display:flex;flex-direction:column;height:100dvh;overflow:hidden;background:var(--bg);}
 /* ═══ HEADER ═══ */
 .header{height:62px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;
   background:rgba(255,255,255,.85);

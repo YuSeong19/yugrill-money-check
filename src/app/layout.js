@@ -21,7 +21,18 @@ export default function RootLayout({ children }) {
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="apple-mobile-web-app-status-bar-style" content="default"/>
       </head>
-      <body>{children}</body>
+      <body>
+        <script dangerouslySetInnerHTML={{__html:`
+(function(){
+  try{
+    var t=localStorage.getItem('yugrill-theme');
+    if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}
+    document.documentElement.setAttribute('data-theme',t);
+  }catch(e){}
+})();
+        `}}/>
+        {children}
+      </body>
     </html>
   )
 }
